@@ -35,5 +35,10 @@
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"bootstrap": "^5.3.3",
+		"bootstrap-datepicker": "^1.10.0",
+		"font-awesome": "^4.7.0"
+	}
 }
