@@ -1,0 +1,30 @@
+html, body {
+    height: 100%;
+    /* border: 1px solid red; */
+}
+
+body {
+    margin: 0 auto !important;
+    /* border: 1px solid green; */
+}
+
+.app-body {
+    min-width: 450px;
+    max-width: 450px;
+}
+
+.app-main {
+    padding: 1em;
+    /* border: 1px solid green; */
+}
+
+.app-header {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+}
+.app-footer {
+    max-width: 426px;
+    margin: 0 auto !important;
+    background-color: white;
+    border-top: 1px solid #eee;
+}
