@@ -3,19 +3,23 @@
     
     let todoGroupName;
     let todoGroupList = [
+        'Favorites', 
         'Personal Things',
         'AI Distribution Design',
         'AI Platform',
         'Cloud-based Power Generation Fuel Cost Prediction'
     ]
 
-    const changeTodoGroupName = (name) => {
-        todoGroupName = name;
-        console.log(`new name: ${name}`);
+    let activeGroupIndex = null;
+    const changeTodoGroupName = (index) => {
+        todoGroupName = todoGroupList[index];
+        console.log(`new name: ${todoGroupName}`);
+        activeGroupIndex = index;
     }
 
     onMount(() => {
-        todoGroupName = todoGroupList[0];
+        todoGroupName = todoGroupList[1];
+        activeGroupIndex = 1;
     });
 </script>
 
@@ -31,36 +35,29 @@
 </div>
 
 <ul class="dropdown-menu">
-    <li>
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <!-- svelte-ignore a11y-no-static-element-interactions -->
-        <div 
-            class="dropdown-item"
-            on:click={() => changeTodoGroupName("Favorites")}
-        >
-            <i class="fa-regular fa-star favorites"></i>
-            Favorites
-        </div>
-    </li>
-    <li><hr class="dropdown-divider"></li>
-    {#each todoGroupList as group}
+    {#each todoGroupList as group, index}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <li>
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <!-- svelte-ignore a11y-no-static-element-interactions -->
             <div 
                 class="dropdown-item"
-                on:click={() => changeTodoGroupName(group)}
+                class:favorites={index==0 ? "favorites": "group"}
+                class:active={activeGroupIndex === index ? "active": "no-active"}
+                on:click={() => changeTodoGroupName(index)}
             >
-                <i class="fa-solid fa-circle-check"></i>
+                <i class={index==0 ? "fa-regular fa-star favorites": "fa-solid fa-circle-check"}></i>
                 {group}
             </div>
         </li>
+        {#if index===0 || index===(todoGroupList.length - 1)}
+        <li><hr class="dropdown-divider"></li>
+        {/if}
     {/each}
-    <li><hr class="dropdown-divider"></li>
+
     <li>
-        <div class="dropdown-item">
-            <i class="fa-solid fa-calendar-plus new"></i>
+        <div class="dropdown-item new">
+            <i class="fa-solid fa-calendar-plus"></i>
             Create New Group
         </div>
     </li>
@@ -72,11 +69,12 @@
         margin: -10px auto auto 1.8em;
         max-width: 390px;
     }
-    .dropdown-item {
+    .dropdown-item.no-active {
         cursor: pointer;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        margin-left: 1.5em;
     }
     .active-group-name {
         white-space: nowrap;
@@ -105,11 +103,24 @@
         margin: 0 1em 0 0;
         color: #888;
     }
-    .dropdown-item>i.favorites.active {
+    .dropdown-item {
+        padding-left: 2em;
+    }
+    .dropdown-item>i {
+        display: none;
+    }
+    .dropdown-item.active>i {
+        display: inline;
+    }
+    .dropdown-item.active {
+        background-color: white;
+        color: #333;
+    }
+    .dropdown-item.favorites.active>i {
         margin: 0 1em 0 0;
         color: deeppink;
     }
-    .dropdown-item>i.new {
+    .dropdown-item.new>i {
         margin: 0 1em 0 0;
         color: darkcyan;
         display: inline;

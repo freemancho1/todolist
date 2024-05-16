@@ -94,14 +94,8 @@
 
     .datetime {
         padding: 0 0 0 1em;
-        font-size: 0.8em;
+        font-size: 0.7em;
         color: #888;
-    }
-
-    i.title {
-        font-size: 1.5em;
-        color: #888;
-        /* margin-left: 0.5em; */
     }
 
 </style>
