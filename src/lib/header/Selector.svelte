@@ -48,7 +48,7 @@
 
     <li>
         <div class="dropdown-item new">
-            <i class="fa-solid fa-calendar-plus"></i>
+            <i class="fa-solid fa-folder-plus"></i>
             Create New Group
         </div>
     </li>

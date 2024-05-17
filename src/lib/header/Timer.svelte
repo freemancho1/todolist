@@ -7,12 +7,14 @@
     });
 </script>
 
-<div>{formatter.format($time)}</div>
+<div class="timer">{formatter.format($time)}</div>
 
 <style>
-    div {
+    .timer {
         padding: 0 0 0 1em;
         font-size: 0.8em;
-        color: #888;
+        /* font-size: 0.5em !important; */
+        color: #bbb;
+        margin-bottom: 0.5em;
     }
 </style>

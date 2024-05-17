@@ -27,6 +27,7 @@
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/package": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@types/bootstrap": "^5.2.10",
 		"publint": "^0.1.9",
 		"svelte": "^4.2.7",
 		"tslib": "^2.4.1",
@@ -38,6 +39,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fortawesome/fontawesome-free": "^6.5.2",
+		"@popperjs/core": "^2.11.8",
 		"bootstrap": "^5.3.3",
 		"bootstrap-datepicker": "^1.10.0"
 	}

@@ -17,6 +17,14 @@
         <p>Active TodoGroupName: {$_activeGroupName}</p>
         <p>Search String: {$_searchString}</p>
 
+        <div 
+            class="tooltip-container" 
+            data-bs-toggle="tooltip" 
+            data-bs-placement="top" 
+            title="Customized Tooltip Text">
+            Hover over me
+        </div>
+
     </div>
 
 </AppLayout>

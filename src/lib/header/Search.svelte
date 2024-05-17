@@ -4,10 +4,7 @@
     let isActive = false;
     let searchString = '';
 
-    const changeSearchString = () => {
-        console.log(`Search String: ${searchString}`);
-        _searchString.set(searchString);
-    }
+    const changeSearchString = () => _searchString.set(searchString);
     const focusHandler = () => isActive = true;
     const blurHandler = () => isActive = false;
     const resetSearchString = () => {

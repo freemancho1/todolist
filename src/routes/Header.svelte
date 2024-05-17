@@ -1,7 +1,8 @@
 <script>
     import Timer from "$lib/header/Timer.svelte";
     import Selector from "$lib/header/Selector.svelte";
-    import Search from "$lib/header/Search.svelte";
+    import AddGroupArea from "$lib/header/AddGroupArea.svelte";
+    import MainButtonGroup from "$lib/header/MainButtonGroup.svelte";
 </script>
 
 <nav class="navbar sticky-top app-header">
@@ -10,19 +11,19 @@
     
     <div class="container row">
         
-        <div class="col-6 header-cols">
+        <div class="col-9 header-cols">
             <Selector />
         </div>
 
-        <div class="col-1"></div>
-
-        <div class="col-5 header-cols">
-            <Search />
+        <div class="col-3 main-button-group">
+            <MainButtonGroup />
         </div>
 
     </div>
 
 </nav>
+
+<AddGroupArea />
 
 <style>
 
@@ -32,6 +33,10 @@
     }
 
     .header-cols {
+        padding: 0px;
+    }
+
+    .main-button-group {
         padding: 0px;
     }
 

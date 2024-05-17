@@ -1,5 +1,12 @@
-<nav class="navbar fixed-bottom app-footer">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/">Fixed bottom</a>
+<script>
+    import Search from "$lib/header/Search.svelte";
+</script>
+
+<nav class="navbar fixed-bottom app-footer justify-content-center">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <Search />
+        </div>
     </div>
 </nav>
+
