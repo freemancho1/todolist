@@ -47,7 +47,14 @@
     {/each}
 
     <li>
-        <div class="dropdown-item new">
+        <div 
+            data-bs-toggle="collapse" 
+            href="#add-group" 
+            role="button" 
+            aria-expanded="false" 
+            aria-controls="add-group"
+            class="dropdown-item new"
+        >
             <i class="fa-solid fa-folder-plus"></i>
             Create New Group
         </div>

@@ -23,5 +23,11 @@ export const _activeGroupName = derived(
     [_groupList, _activeGroupIndex],
     ([$_groupList, $_activeGroupIndex]) => $_groupList[$_activeGroupIndex]
 );
+export function _addGroup(value) {
+    _groupList.update(list => {
+        list.push(value);
+        return list;
+    });
+}
 
 export const _searchString = writable("");

@@ -3,39 +3,39 @@
 
 <div class="main-button-group">
 
-    <div
+    <a
         class="btn btn-white" 
         data-bs-toggle="collapse" 
-        href="#addGroup" 
-        role="button" 
+        href="#add-group" 
         aria-expanded="false" 
-        aria-controls="addGroup"
+        aria-controls="add-group"
         title="add todo"
     >
         <i class="fa-solid fa-plus add"></i>
-    </div>
+    </a>
 
-    <div
+    <a
         class="btn btn-white" 
         data-bs-toggle="collapse" 
         href="#addGroup" 
-        role="button" 
         aria-expanded="false" 
         aria-controls="addGroup"
-        title="add todo"
+        title="display options"
     >
         <i class="fa-solid fa-ellipsis-vertical options"></i>
-    </div>
+    </a>
 
 </div>
 
 
 <style>
-    div {
-        padding: 0px;
-    }
     .main-button-group {
-        padding-left: 45px;
+        padding: 0 0 0 55px;
+    }
+    a {
+        padding: 0px;
+        outline: none !important;
+        border: none;
     }
 
     i {
