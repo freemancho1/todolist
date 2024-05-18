@@ -1,5 +1,5 @@
 <script>
-    import Search from "$lib/header/Search.svelte";
+    import Search from "$lib/footer/Search.svelte";
 </script>
 
 <nav class="navbar fixed-bottom app-footer justify-content-center">

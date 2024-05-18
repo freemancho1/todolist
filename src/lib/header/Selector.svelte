@@ -1,11 +1,40 @@
 <script>
-    import { _groupList, _activeGroupIndex, _activeGroupName } from '$lib/stores.js';
+    import { _groupList, _activeGroupId, _activeGroup } from '$lib/stores.js';
     
     $: groupList = $_groupList;
-    $: activeGroupIndex = $_activeGroupIndex;
-    $: activeGroupName = $_activeGroupName;
+    $: activeGroupId = $_activeGroupId;
+    $: activeGroup = $_activeGroup;
 
-    const changeGroup = (index) => _activeGroupIndex.set(index);
+    const changeGroup = (index) => _activeGroupId.set(index);
+
+    // Dragging
+    let draggingIndex = null;
+
+    function handleDragStart(event, index) {
+        draggingIndex = index;
+        event.dataTransfer.effectAllowed = "move";
+        event.dataTransfer.setData("text/plain", index);
+    }
+
+    function handleDragOver(index) {
+        if (draggingIndex === index) return;
+
+        const newGroupList = [...groupList];
+        const group = newGroupList[draggingIndex];
+        newGroupList.splice(draggingIndex, 1);
+        newGroupList.splice(index, 0, group);
+        draggingIndex = index;
+        _groupList.set(newGroupList);
+    }
+
+    function handleDrop() {
+        draggingIndex = null;
+    }
+
+    function handleDragEnd() {
+        draggingIndex = null;
+    }
+
 </script>
 
 
@@ -16,31 +45,52 @@
     aria-expanded="false"
 >
     <i class="fa-solid fa-angle-down"></i>
-    {activeGroupName}
+    {activeGroup.title}
 </div>
 
-<ul class="dropdown-menu">
+<ul 
+    class="dropdown-menu"
+>
     {#each groupList as group, index}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
+        {#if group.id === 0}
         <li>
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <!-- svelte-ignore a11y-no-static-element-interactions -->
             <div 
-                class="dropdown-item 
-                      {index===0 ? 'favorites': 'group'}
-                      {activeGroupIndex === index ? 'active': 'no-active'}"
-                on:click={() => changeGroup(index)}
+                class="dropdown-item favorites
+                      {activeGroupId === 0 ? 'active': 'no-active'}"
+                on:click={() => changeGroup(0)}
             >
                 <i class={
-                    index==0 
-                        ? (activeGroupIndex === index 
-                            ? "fa-solid fa-star"
-                            : "fa-regular fa-star")
-                        : "fa-solid fa-circle-check"
+                    activeGroupId === 0
+                        ? "fa-solid fa-star"
+                        : "fa-regular fa-star"
                 }></i>
-                {group}
+                {group.title}
             </div>
         </li>
+        {:else}
+        <li
+            draggable="true"
+            on:dragstart={(event)=>handleDragStart(event, index)}
+            on:dragover|preventDefault={() => handleDragOver(index)}
+            on:drop|preventDefault={handleDrop}
+            on:dragend={handleDragEnd}
+            class:dragging={draggingIndex === index}
+        >
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
+            <div 
+                class="dropdown-item group
+                      {activeGroupId === group.id ? 'active': 'no-active'}"
+                on:click={() => changeGroup(group.id)}
+            >
+                <i class="fa-solid fa-circle-check"></i>
+                {group.title}
+            </div>
+        </li>
+        {/if}
         {#if index===0 || index===(groupList.length - 1)}
         <li><hr class="dropdown-divider"></li>
         {/if}
@@ -114,4 +164,9 @@
         color: darkcyan;
         display: inline;
     }
+
+    .dragging {
+        opacity: 0.5;
+    }
+
 </style>
