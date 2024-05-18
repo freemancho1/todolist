@@ -13,7 +13,6 @@
     function handleDragStart(event, index) {
         draggingIndex = index;
         event.dataTransfer.effectAllowed = "move";
-        event.dataTransfer.setData("text/plain", index);
     }
 
     function handleDragOver(index) {
