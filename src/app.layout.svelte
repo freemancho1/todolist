@@ -1,27 +1,29 @@
 <script>
-    import "./app.css";
-    import Header from "./routes/Header.svelte";
-    import Footer from "./routes/Footer.svelte";
+    import TodoHeader from "./components/header/TodoHeader.svelte";
+    import TodoFooter from "./components/footer/TodoFooter.svelte";
 
-    export let pageTitle = "Todo List";
+    import "./app.css";
+
+    export let pageTitle = "To-do List";
 </script>
+
 
 <svelte:head>
     <title>{pageTitle}</title>
 </svelte:head>
 
+
 <div class="container app-body">
 
-    <Header />
+    <TodoHeader />
 
     <div class="app-main">
-
+        <!-- To-do Main Area -->
         <slot>
             <em>No content was provided.</em>
         </slot>
-
     </div>
 
-    <Footer />
+    <TodoFooter />
 
 </div>
