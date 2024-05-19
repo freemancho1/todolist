@@ -1,15 +1,14 @@
 <script>
     import TodoHeader from "./components/header/TodoHeader.svelte";
     import TodoFooter from "./components/footer/TodoFooter.svelte";
+    import { appInfo } from "./stores/messages.js";
 
     import "./app.css";
-
-    export let pageTitle = "To-do List";
 </script>
 
 
 <svelte:head>
-    <title>{pageTitle}</title>
+    <title>{$appInfo.title}</title>
 </svelte:head>
 
 

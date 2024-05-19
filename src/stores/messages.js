@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
 
-export const app = writable({
+export const appInfo = writable({
     title: "To-to List",
 });

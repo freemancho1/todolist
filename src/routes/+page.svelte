@@ -1,10 +1,9 @@
 <script>
     import AppLayout from "../app.layout.svelte";
-    import { app } from "../stores/messages.js";
 </script>
 
 
-<AppLayout pageTitle={$app.title}>
+<AppLayout>
 
     <div>Main app body</div>
 
