@@ -8,7 +8,7 @@
     const addGroup = () => {
         if (newGroupName === "") return;
         if (groupList.some(item => item.title.includes(newGroupName))) {
-            showToast("warning-toast");
+            showToast("error-toast");
             newGroupName = "";
             return;
         }

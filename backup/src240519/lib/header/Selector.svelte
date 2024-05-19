@@ -72,7 +72,7 @@
         {:else}
         <li
             draggable="true"
-            on:dragstart={(event)=>handleDragStart(event, index)}
+            on:dragstart={(event) => handleDragStart(event, index)}
             on:dragover|preventDefault={() => handleDragOver(index)}
             on:drop|preventDefault={handleDrop}
             on:dragend={handleDragEnd}

@@ -6,9 +6,9 @@
     <a
         class="btn btn-white" 
         data-bs-toggle="collapse" 
-        href="#add-group" 
+        href="#add-todo" 
         aria-expanded="false" 
-        aria-controls="add-group"
+        aria-controls="add-todo"
         title="add todo"
     >
         <i class="fa-solid fa-plus add"></i>

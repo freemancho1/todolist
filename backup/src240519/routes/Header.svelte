@@ -1,7 +1,7 @@
 <script>
     import Timer from "$lib/header/Timer.svelte";
     import Selector from "$lib/header/Selector.svelte";
-    import AddGroupArea from "$lib/header/AddGroupArea.svelte";
+    import Add from "$lib/todo/Add.svelte";
     import MainButtonGroup from "$lib/header/MainButtonGroup.svelte";
 </script>
 
@@ -23,7 +23,7 @@
 
 </nav>
 
-<AddGroupArea />
+<Add />
 
 <style>
 
