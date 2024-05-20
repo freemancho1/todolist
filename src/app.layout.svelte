@@ -1,9 +1,10 @@
 <script>
     import TodoHeader from "./components/header/TodoHeader.svelte";
     import TodoFooter from "./components/footer/TodoFooter.svelte";
-    import { appInfo } from "./stores/messages.js";
+    import { appInfo } from "$lib/Messages.js";
 
     import "./app.css";
+    import "./app.style.css";
 </script>
 
 

@@ -1,0 +1,30 @@
+:root {
+
+    --color-dart:           var(--bs-body-color);
+    --color-neutral:        var(--bs-secondary-color);
+    --color-light:          var(--bs-tertiary-color);
+    --bg-light:             var(--bs-body-bg);
+    --bg-neutral:           var(--bs-tertiary-bg);
+    --bg-dark:              var(--bs-secondary-bg);
+    --border-light:         var(--bs-dark-bg-subtle);
+    --border-dark:          var(--bs-secondary-color);
+
+    --primary:              var(--bs-primary);
+    --primary-bg:           var(--bs-primary-bg-subtle);
+    --primary-text:         var(--bs-primary-text-emphasis);
+    --success:              var(--bs-success);
+    --success-bg:           var(--bs-success-bg-subtle);
+    --success-text:         var(--bs-success-text-emphasis);
+    --danger:               var(--bs-danger);
+    --danger-bg:            var(--bs-danger-bg-subtle);
+    --danger-text:          var(--bs-danger-text-emphasis);
+    --warning:              var(--bs-warning);
+    --warning-bg:           var(--bs-warning-bg-subtle);
+    --warning-text:         var(--bs-warning-text-emphasis);
+    --info:                 var(--bs-info);
+    --info-bg:              var(--bs-info-bg-subtle);
+    --info-text:            var(--bs-info-text-emphasis);
+
+    --radius:               var(--bs-border-radius);
+
+}

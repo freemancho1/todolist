@@ -7,6 +7,6 @@
         <div class="col-8">
             <Search />
         </div>
-    </div>
+    </div> 
 </nav>
 

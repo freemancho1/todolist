@@ -29,6 +29,7 @@
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@types/bootstrap": "^5.2.10",
 		"publint": "^0.1.9",
+		"sass": "^1.77.2",
 		"svelte": "^4.2.7",
 		"tslib": "^2.4.1",
 		"typescript": "^5.3.2",

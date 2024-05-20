@@ -23,9 +23,4 @@ body {
     background-color: white;
     border-bottom: 1px solid #eee;
 }
-.app-footer {
-    max-width: 426px;
-    margin: 0 auto !important;
-    background-color: white;
-    border-top: 1px solid #eee;
-}
+
