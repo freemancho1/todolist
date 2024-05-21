@@ -58,38 +58,41 @@
         border-radius: var(--radius);
         border-bottom: 1px solid var(--border-light);
         padding-right: 0px;
-        background-color: var(--bg-light);
+        background-color: var(--white);
 
-        .active {
+        i {
+            font-size: 1em;
+            margin: 0.7em 0.5em 0em 1em;
+            color: var(--color-neutral);
+        }
+
+        &.active {
             border-bottom: 2px solid var(--success);
             i {
                 color: var(--success);
             }
         }
+
+        &.not-null-search-string {
+            cursor: pointer;
+        }
     }
-    /* span.active {
-        border-bottom: 2px solid var(--success);
-    }
-    span.active>i {
-        color: var(--success);
-    } */
-    span.not-null-search-string {
-        cursor: pointer;
-    }
-    i {
-        font-size: 1em;
-        margin: 0.7em 0.5em 0em 1em;
-        color: var(--color-neutral);
-    }
+
 
     input {
         border: none;
         border-bottom: 1px solid var(--border-light);
-    }
-    input:focus {
-        box-shadow: none;
-        border-bottom: 2px solid var(--success);
-        color: var(--success);
+        &.form-control:focus {
+            box-shadow: none;
+            border-bottom: 2px solid var(--success);
+            color: var(--success);
+            &::placeholder {
+                color: var(--success-bg);
+            }
+        }
+        &.form-control::placeholder {
+            color: var(--color-light);
+        }
     }
 
 </style>

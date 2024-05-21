@@ -11,7 +11,7 @@
         {img: "fa-solid fa-circle-info", color: "#fff", bgColor: "#0dcaf0"},
         {img: "fa-solid fa-triangle-exclamation", color: "#fff", bgColor: "#fd7e14"},
         {img: "fa-solid fa-bug", color: "#fff", bgColor: "#dc3545"},
-    ]
+    ] 
 </script>
 
 

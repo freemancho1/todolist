@@ -5,5 +5,9 @@ export const appInfo = readable({
 });
 
 export const labels = readable({
+    add: "Add",
+    save: "Save",
+    cancle: "Cancle",    
     createNewGroup: "Create New Group",
+    enterNewGroupName: "Enter new group name",
 });

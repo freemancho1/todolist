@@ -19,8 +19,8 @@
     .app-footer {
         max-width: 426px;
         margin: 0 auto !important;
-        background-color: var(--bg-light);
-        border-top: 1px solid var(--bg-dark);
+        background-color: var(--white);
+        border-top: 1px solid var(--border-dark);
     }
 
 </style>

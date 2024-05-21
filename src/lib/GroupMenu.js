@@ -10,7 +10,7 @@ export const _groupList = writable([
 ]);
 
 export const _activeGroupId = writable(1);
-export const _activeGroupName = derived(
+export const _activeGroup = derived(
     [_groupList, _activeGroupId],
     ([$_groupList, $_activeGroupId]) => {
         return $_groupList.find(group => group.id === $_activeGroupId);
