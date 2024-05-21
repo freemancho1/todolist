@@ -29,8 +29,9 @@
         if (!checkTodo()) return;
         _addTodo(newTodo);
 
-        // Close AddTodoArea
-        addTodoAreaContainer.classList.remove("show");
+        // Clear & Close AddTodoArea
+        newTodo.title = newTodo.desc = "";
+        document.getElementById("add-todo-area").classList.remove("show");
     }
     const checkTodo = () => {
         if (!newTodo.title) return false;
@@ -107,6 +108,9 @@
             .done-button-area {
                 color: var(--color-light);
                 // padding-top: 0.4em;
+                i {
+                    cursor: pointer;
+                }
             }
 
             .data-area {
@@ -116,13 +120,16 @@
                     background-color: var(--bg-light);
                     margin-bottom: 0.3em;
                     padding: 0px !important;
+
                     &::placeholder {
                         color: var(--color-light);
                     }
+                    
                     &.todo-title {
                         color: var(--color-dark);
                         font-weight: bold;
                     }
+                    
                     &.todo-desc {
                         color: var(--color-neutral);
                         font-size: 0.9em;
