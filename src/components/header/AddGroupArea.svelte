@@ -1,6 +1,6 @@
 <script>
     import { _addNewGroup, _groupList } from "$lib/GroupMenu.js";
-    import { toasts, showToast } from "$lib/System.js";
+    import { toasts, showToast } from "$lib/Toast.js";
     import { labels } from "$lib/Messages.js";
     import Toast from "../system/Toast.svelte";
 

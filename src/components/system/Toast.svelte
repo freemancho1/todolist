@@ -1,5 +1,5 @@
 <script>
-    import { toastTypeInfos } from "$lib/System.js";
+    import { toastTypeInfos } from "$lib/Toast.js";
 
     export let type = 0;
     export let id = "";
@@ -8,7 +8,7 @@
 </script>
 
 
-<div class="toast-container position-fixed top-0 start-50 translate-middle-x">
+<div class="toast-container position-fixed bottom-0 start-50 translate-middle-x">
 
     <div 
         id={id}
@@ -55,7 +55,7 @@
 <style lang="scss">
 
     .toast-container {
-        margin-top: 80px;
+        margin-bottom: 5px;
     }
 
     .toast {

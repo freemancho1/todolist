@@ -15,14 +15,14 @@
 </script>
 
 
-<div class="timer">{formatter.format($_time)}</div>
+<div class="app-timer">{formatter.format($_time)}</div>
 
 
 <style>
 
-    .timer {
+    .app-timer {
         padding: 0 0 0 1em;
-        font-size: 0.7em;
+        font-size: 13px !important;
         color: var(--color-light);
         margin-bottom: 0.5em;
     }

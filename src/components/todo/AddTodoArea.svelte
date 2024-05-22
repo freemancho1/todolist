@@ -1,15 +1,22 @@
 <script>
 	import { onMount } from 'svelte';
+    import { Datepicker } from 'svelte-calendar';
     import { _todos, _addTodo } from '$lib/Todo.js';
     import { _activeGroupId } from '$lib/GroupMenu.js';
+    import { toasts, showToast } from "$lib/Toast.js";
+    import Toast from '../system/Toast.svelte';
+
+    $: targetToasts = $toasts.addTodoArea;
 
     $: todos = $_todos;
     $: newTodoIndex = todos.length;
-    let newTodo = { 
+    $: newTodo = { 
         gid: $_activeGroupId,
+        pid: 0,
         id: newTodoIndex, 
         title: "", 
-        desc: "" 
+        desc: "",
+        startDate: null,
     };
 
     let addTodoAreaContainer;
@@ -26,12 +33,14 @@
         }, 0);
     }
     const addTodo = () => {
+        // Clear & Close AddTodoArea
+        // newTodo.title = newTodo.desc = "";
+        document.getElementById("add-todo-area").classList.remove("show");
+
         if (!checkTodo()) return;
         _addTodo(newTodo);
-
-        // Clear & Close AddTodoArea
-        newTodo.title = newTodo.desc = "";
-        document.getElementById("add-todo-area").classList.remove("show");
+        console.log('new todo:', newTodo);
+        showToast("save-add-todo");
     }
     const checkTodo = () => {
         if (!newTodo.title) return false;
@@ -84,6 +93,14 @@
                     />
                 </div>
 
+                <div>
+                    <input 
+                        type="date"
+                        class="form-control todo-date"
+                        bind:value={newTodo.startDate}
+                    />
+                </div>
+
             </div>
 
         </div>
@@ -91,12 +108,17 @@
 </div>
 
 
+{#each targetToasts as toast}
+    <Toast {...toast} />
+{/each}
+
+
 <style lang="scss">
 
     /* div { border: 1px solid red; } */
 
     #add-todo-area {
-        margin: -1em;
+        margin: 0 -1em 0 -1em;
 
         .card {
             border-radius: 0px;
@@ -118,7 +140,7 @@
                     box-shadow: none;
                     border: none;
                     background-color: var(--bg-light);
-                    margin-bottom: 0.3em;
+                    margin-bottom: 0em;
                     padding: 0px !important;
 
                     &::placeholder {
@@ -132,11 +154,28 @@
                     
                     &.todo-desc {
                         color: var(--color-neutral);
+                        font-size: 1em;
+                    }
+
+                    &.todo-date {
+                        color: var(--color-light);
                         font-size: 0.9em;
+                        border: 1px solid var(--bg-dark);
+                        border-radius: 50px;
+                        margin: 0.3em 0 0.3em 0;
+                        padding: 0.1em 0.5em 0 0.5em !important;
+                        // &::placeholder {
+                        //     font-size: 0.9em;
+                        // }
                     }
                 }
             }
         }
     }
+
+    // input[type="date"]::-webkit-inner-spin-button,
+    // input[type="date"]::-webkit-calendar-picker-indicator {
+    //     display: none;
+    // }
 
 </style>
