@@ -3,8 +3,8 @@
         class="btn btn-white" 
         data-bs-toggle="collapse" 
         aria-expanded="false" 
-        href="#add-todo-area" 
-        aria-controls="add-todo-area"
+        href="#add-todo" 
+        aria-controls="add-todo"
         title="add todo"
     >
         <i class="fa-solid fa-plus add"></i>

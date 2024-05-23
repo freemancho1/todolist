@@ -1,13 +1,13 @@
 <script>
     import AppLayout from "../app.layout.svelte";
-    import AddTodoArea from "../components/todo/AddTodoArea.svelte";
+    import AddTodo from "../components/todo/AddTodo.svelte";
     import ShowTodos from "../components/todo/ShowTodos.svelte";
 </script>
 
 
 <AppLayout>
 
-    <AddTodoArea />
+    <AddTodo />
     <ShowTodos />
     <div>Main app body</div>
 

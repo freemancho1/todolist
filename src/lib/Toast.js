@@ -22,7 +22,7 @@ export const toasts = readable({
             message: "The to-do list you entered already exists."
         },
     ], 
-    addTodoArea: [
+    addTodo: [
         {
             type: 1,
             id: "save-add-todo",

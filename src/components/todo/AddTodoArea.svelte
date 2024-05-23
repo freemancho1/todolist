@@ -46,15 +46,18 @@
         return true
     }
 
-    const showPicker = () => {
-        const todoDate = document.getElementsByClassName("todo-date");
-        todoDate.addEventListener("click", function(event) {
-            this.showPicker();
-        });
+    const todoDesc = document.getElementsByClassName("todo-desc");
+    // let todoDesc;
+    todoDesc.addEventListener("input", autoResize);    
+    const autoResize = () => {
+        this.style.height = "auto";
+        this.style.height = this.scrollHeight + "px";
     }
 
     // Check Element Focus
     onMount(() => {
+        autoResize.call(todoDesc);
+
         addTodoAreaContainer.addEventListener("focusin", handleElementFocus);
         addTodoAreaContainer.addEventListener("focusout", handleElementBlur);
         return () => {
@@ -91,12 +94,12 @@
                 </div>
 
                 <div>
-                    <input 
+                    <textarea 
                         type="text"
                         class="form-control todo-desc"
                         placeholder="description..."
                         bind:value={newTodo.desc}
-                    />
+                    ></textarea>
                 </div>
 
                 <div class="row">
@@ -179,6 +182,22 @@
                         margin: 0.3em 0 0.3em 0;
                         padding: 0.1em 0.5em 0 0.5em !important;
                     }
+                    &:hover, &:focus {
+                        background-color: var(--white);
+                        cursor: pointer;
+                    }
+                }
+
+                textarea {
+                    box-shadow: none;
+                    box-sizing: border-box;
+                    border: none;
+                    background-color: var(--bg-light);
+                    margin-bottom: 0em;
+                    padding: 0px !important;
+                    overflow: hidden;
+                    resize: none;
+
                     &:hover, &:focus {
                         background-color: var(--white);
                         cursor: pointer;
