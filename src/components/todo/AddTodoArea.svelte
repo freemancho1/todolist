@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from 'svelte';
-    import { Datepicker } from 'svelte-calendar';
     import { _todos, _addTodo } from '$lib/Todo.js';
     import { _activeGroupId } from '$lib/GroupMenu.js';
     import { toasts, showToast } from "$lib/Toast.js";
@@ -45,6 +44,13 @@
     const checkTodo = () => {
         if (!newTodo.title) return false;
         return true
+    }
+
+    const showPicker = () => {
+        const todoDate = document.getElementsByClassName("todo-date");
+        todoDate.addEventListener("click", function(event) {
+            this.showPicker();
+        });
     }
 
     // Check Element Focus
@@ -93,12 +99,20 @@
                     />
                 </div>
 
-                <div>
-                    <input 
-                        type="date"
-                        class="form-control todo-date"
-                        bind:value={newTodo.startDate}
-                    />
+                <div class="row">
+                    <div class="col-6"></div>
+                    <div class="col-5">
+                        <input 
+                            type="date"
+                            class="form-control todo-date"
+                            bind:value={newTodo.startDate}
+                        />
+                    </div>
+                    <div class="col-1 todo-repeat">
+                        <button>
+                            <i class="fa-solid fa-repeat"></i>
+                        </button>
+                    </div>
                 </div>
 
             </div>
@@ -115,7 +129,7 @@
 
 <style lang="scss">
 
-    /* div { border: 1px solid red; } */
+    // div { border: 1px solid red; }
 
     #add-todo-area {
         margin: 0 -1em 0 -1em;
@@ -164,15 +178,43 @@
                         border-radius: 50px;
                         margin: 0.3em 0 0.3em 0;
                         padding: 0.1em 0.5em 0 0.5em !important;
-                        // &::placeholder {
-                        //     font-size: 0.9em;
-                        // }
+                    }
+                    &:hover, &:focus {
+                        background-color: var(--white);
+                        cursor: pointer;
+                    }
+                }
+
+                .todo-repeat {
+                    padding: 0.4em 0 0 0;
+                    button {
+                        padding-left: 0;
+                        border: none;
+                        background-color: var(--bg-light);
+                        color: var(--color-light);
+                        font-size: 0.9em;
+                        &:hover {
+                            color: var(--danger);
+                        }
                     }
                 }
             }
         }
     }
 
+    // input[type="date"]::-webkit-calendar-picker-indicator {
+    //     border: 1px solid red;
+    //     background: transparent;
+    //     bottom: 0;
+    //     color: transparent;
+    //     cursor: pointer;
+    //     height: auto;
+    //     left: 0;
+    //     position: absolute;
+    //     right: 0;
+    //     top: 0;
+    //     width: auto;
+    // }
     // input[type="date"]::-webkit-inner-spin-button,
     // input[type="date"]::-webkit-calendar-picker-indicator {
     //     display: none;

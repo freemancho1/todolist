@@ -40,6 +40,22 @@
                                 bind:value={todo.desc}
                             />
                         </div>
+
+                        <div class="row">
+                            <div class="col-6"></div>
+                            <div class="col-5">
+                                <input 
+                                    type="date"
+                                    class="form-control todo-date"
+                                    bind:value={todo.startDate}
+                                />
+                            </div>
+                            <div class="col-1 todo-repeat">
+                                <button>
+                                    <i class="fa-solid fa-repeat"></i>
+                                </button>
+                            </div>
+                        </div>
         
                     </div>
         
@@ -99,6 +115,52 @@
                         &.todo-desc {
                             color: var(--color-neutral);
                             font-size: 0.9em;
+                        }
+
+                        &.todo-date {
+                            color: var(--color-light);
+                            font-size: 0.9em;
+                            // border: 1px solid var(--bg-dark);
+                            // border-radius: 50px;
+                            margin: 0.3em 0 0.3em 0;
+                            padding: 0.1em 0.5em 0 0.5em !important;
+                        }
+                        &:hover, &:focus {
+                            background-color: var(--bg-light);
+                            cursor: pointer;
+                        }
+                    }
+
+                    .todo-repeat {
+                        display: none;
+                    }
+
+                    &:hover {
+                        &.todo-date {
+                            color: var(--color-light);
+                            font-size: 0.9em;
+                            border: 1px solid var(--bg-dark);
+                            border-radius: 50px;
+                            margin: 0.3em 0 0.3em 0;
+                            padding: 0.1em 0.5em 0 0.5em !important;
+                        }
+                        &:hover, &:focus {
+                            background-color: var(--bg-light);
+                            cursor: pointer;
+                        }
+                        .todo-repeat {
+                            padding: 0.4em 0 0 0;
+                            button {
+                                padding-left: 0;
+                                border: none;
+                                display: inline;
+                                background-color: var(--white);
+                                color: var(--color-light);
+                                font-size: 0.9em;
+                                &:hover {
+                                    color: var(--danger);
+                                }
+                            }
                         }
                     }
                 }
