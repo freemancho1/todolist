@@ -14,17 +14,25 @@ export const _time = readable(
 export const _searchString = writable("");
 
 
-export class HandlePlaceholder {
-    constructor(event) {
-        this.event = event;
-        this.placeholder = this.event.target.placeholder;
+export class HandleFocus {
+    constructor(callback) {
+        this.placeholder = "";
+        this.callback = callback;
+        console.log(callback);
     }
 
-    setFocus() {
-        this.event.target.placeholder = "";
+    setFocus(event) {
+        this.placeholder = event.target.placeholder;
+        event.target.placeholder = "";
     }
 
-    setBlur() {
-        this.event.target.placeholder = this.placeholder;
+    setBlur(event) {
+        event.target.placeholder = this.placeholder;
+        this.placeholder = "";
+        console.log("aaaa")
+        if (this.callback !== null) {
+            console.log("ccccc");
+            setTimeout(this.callback(), 0);
+        }
     }
 }
