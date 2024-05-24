@@ -182,7 +182,7 @@
                         margin: 0.3em 0 0.3em 0;
                         padding: 0.1em 0.5em 0 0.5em !important;
                     }
-                    &:hover, &:focus {
+                    &:hover {
                         background-color: var(--white);
                         cursor: pointer;
                     }

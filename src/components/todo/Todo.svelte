@@ -1,29 +1,20 @@
 <script>
     import { onMount } from "svelte";
     import { resizeTextArea } from "$lib/Utils.js";
-    import { HandleFocus } from "$lib/System.js";
+    import { HandleFocus, handleContainerFocus } from "$lib/System.js";
 
     export let mode = null;
     export let todo = null;
 
     let todoContainer;
     const callbackPlaceholder = () => {
-        console.log("bbbbb")
-        if (!todoContainer.contains(document.activeElement)) 
-            saveTodo();
-    };
-    const saveTodo = () => {
+        if (todoContainer.contains(document.activeElement)) return;
         console.log("save todo", todo);
     };
     const handleFocus = new HandleFocus(callbackPlaceholder);
 
     onMount(() => {
-        todoContainer.addEventListener("focusin", handleFocus.setFocus);
-        todoContainer.addEventListener("focusout", handleFocus.setBlur);
-        return () => {
-            todoContainer.removeEventListener("focusin", handleFocus.setFocus);
-            todoContainer.removeEventListener("focusout", handleFocus.setBlur);
-        };
+        handleContainerFocus(todoContainer, handleFocus);
     });
 </script>
 

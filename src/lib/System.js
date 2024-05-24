@@ -18,7 +18,6 @@ export class HandleFocus {
     constructor(callback) {
         this.placeholder = "";
         this.callback = callback;
-        console.log(callback);
     }
 
     setFocus(event) {
@@ -29,10 +28,14 @@ export class HandleFocus {
     setBlur(event) {
         event.target.placeholder = this.placeholder;
         this.placeholder = "";
-        console.log("aaaa")
-        if (this.callback !== null) {
-            console.log("ccccc");
-            setTimeout(this.callback(), 0);
-        }
+        if (this.callback !== null) setTimeout(this.callback, 0);
     }
+}
+export const handleContainerFocus = (el, cls) => {
+    el.addEventListener("focusin", cls.setFocus.bind(cls));
+    el.addEventListener("focusout", cls.setBlur.bind(cls));
+    return () => {
+        el.removeEventListener("focusin", cls.setFocus.bind(cls));
+        el.removeEventListener("focusout", cls.setBlur.bind(cls));
+    };
 }

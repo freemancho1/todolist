@@ -9,6 +9,5 @@
 
     <AddTodo />
     <ShowTodos />
-    <div>Main app body</div>
 
 </AppLayout>
