@@ -12,9 +12,10 @@ body {
 .app-body {
     min-width: 450px;
     max-width: 450px;
+    height: 100vh;
 }
 
 .app-main {
     padding: 1em;
     /* border: 1px solid green; */
-}
+} 

@@ -7,6 +7,7 @@ export const toastTypeInfos = readable([
     {img: "fa-solid fa-triangle-exclamation", color: "var(--white)", bgColor: "var(--warning)"},
     {img: "fa-solid fa-bug", color: "var(--white)", bgColor: "var(--danger)"},
 ]);
+
 export const toasts = readable({
     addGroupArea: [
         {
@@ -45,6 +46,7 @@ export const toasts = readable({
         }
     ]
 });
+
 export function showToast(toastId, subMessage="") {
     const targetToast = document.getElementById(toastId);
     const content = targetToast.querySelector("#var-message");

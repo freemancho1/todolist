@@ -21,12 +21,12 @@ export class HandleFocus {
     }
 
     setFocus(event) {
-        this.placeholder = event.target.placeholder;
-        event.target.placeholder = "";
+        this.placeholder = event.currentTarget.placeholder;
+        event.currentTarget.placeholder = "";
     }
 
     setBlur(event) {
-        event.target.placeholder = this.placeholder;
+        event.currentTarget.placeholder = this.placeholder;
         this.placeholder = "";
         if (this.callback !== null) setTimeout(this.callback, 0);
     }

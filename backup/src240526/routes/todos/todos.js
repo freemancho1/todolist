@@ -12,7 +12,7 @@ export let todos = createTodoStore([
 export function createTodoStore(initial) {
     let uid = 1;
 
-    const todos = initial.map(({done, description}) => {
+    const todos = initial.map(({done, description}) => { 
         return {
             id: uid++,
             done,
