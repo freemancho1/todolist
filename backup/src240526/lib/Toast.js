@@ -13,13 +13,13 @@ export const toasts = readable({
             type: 1, 
             id: "save-add-group", 
             title: "Success",
-            message: "The to-do list has been saved successfully."
+            message: "To-do group saved."
         },
         {
             type: 4, 
             id: "error-add-group", 
             title: "Error", 
-            message: "The to-do list you entered already exists."
+            message: "To-do group already exists."
         },
     ], 
     addTodo: [
@@ -27,7 +27,21 @@ export const toasts = readable({
             type: 1,
             id: "save-add-todo",
             title: "Success",
-            message: "The to-do has been saved successfully.",
+            message: "To-do saved.",
+        }
+    ],
+    showTodos: [
+        {
+            type: 1,
+            id: "update-todo",
+            title: "Success",
+            message: "To-do updated.",
+        },
+        {
+            type: 3,
+            id: "done-todo",
+            title: "Warning",
+            message: "To-do done.",
         }
     ]
 });

@@ -42,6 +42,7 @@
 		"@fortawesome/fontawesome-free": "^6.5.2",
 		"@popperjs/core": "^2.11.8",
 		"bootstrap": "^5.3.3",
-		"bootstrap-datepicker": "^1.10.0"
+		"bootstrap-datepicker": "^1.10.0",
+		"tippy.js": "^6.3.7"
 	}
 }
