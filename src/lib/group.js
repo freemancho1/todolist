@@ -16,7 +16,7 @@ function createGroupStore(initial) {
 
     const groups = initial.map(({title, type, active}) => {
         return {
-            id: uid++,
+            id: uid++, 
             title,
             type,
             active

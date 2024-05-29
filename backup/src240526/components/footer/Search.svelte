@@ -9,7 +9,7 @@
     const handleBlur = () => isActive = false;
     const resetSearchString = () => {
         if (!searchString) return;
-        searchString = "";
+        searchString = ""; 
         changeSearchString();
     }
 </script>
