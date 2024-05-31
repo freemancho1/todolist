@@ -6,7 +6,7 @@ export let groups = createGroupStore([
     {title: 'Personal Things', type: "list-item", active: true},
     {title: 'AI Distribution Design', type: "list-item", active: false},
     {title: 'AI Platform', type: "list-item", active: false},
-    {title: 'Cloud-based Power Generation Fuel Cost Prediction', type: "list-item", active: false},
+    {title: 'Cloud-based row material price prediction service', type: "list-item", active: false},
 ]);
 
 
