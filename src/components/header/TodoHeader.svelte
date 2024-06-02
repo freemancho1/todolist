@@ -23,7 +23,7 @@
         </div>
 
         <div class="col-3">
-            <ButtonGroup />
+            <ButtonGroup {labels} />
         </div>
 
     </div>

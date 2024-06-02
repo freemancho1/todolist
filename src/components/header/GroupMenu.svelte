@@ -15,7 +15,7 @@
     aria-expanded="false"
     use:showTooltip={{
         content: labels.group.menu, 
-        theme: labels.tooltipTheme}}>
+        theme: labels.tooltip.theme}}>
 
     <i class={icons.group.angleDown}></i>
     

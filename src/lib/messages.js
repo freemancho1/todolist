@@ -11,7 +11,11 @@ export const labels = {
         placeholder: "Enter new group name...",
         menu: "Group Menu",
     },
-    tooltipTheme: "meterial",
+    tooltip: {
+        theme: "meterial",
+        todo: "Add to-to",
+        options: "Option Menu",
+    },
     todo: {
         ph: {
             title: "to-do..",

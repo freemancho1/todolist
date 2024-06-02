@@ -2,6 +2,8 @@ import { writable } from "svelte/store";
 
 
 export let todos = createTodoStore([
+    {gid: 2, pid: 0, title: "Cleaning and oiling the car.", desc: "cleaning and oiling the car."},
+    {gid: 2, pid: 0, title: "Driving to Shinan-gun with my wife.", desc: "driving to Shinan-gun with my wife."},
     {gid: 5, pid: 0, title: "Write a new research project plan.", desc: "write a new research project plan."},
     {gid: 5, pid: 0, title: "New research project PT writing.", desc: "new research project pt writing."},
     {gid: 4, pid: 0, title: "Preparation for assignment result evaluation.", desc: "preparation for assignment result evaluation."},
