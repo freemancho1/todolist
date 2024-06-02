@@ -3,6 +3,7 @@
 
     export let groups;
     export let labels;
+    export let icons;
     export let activeGroup;
 </script>
 
@@ -16,7 +17,7 @@
         content: labels.group.menu, 
         theme: labels.tooltipTheme}}>
 
-    <i class="fa-solid fa-angle-down"></i>
+    <i class={icons.group.angleDown}></i>
     
     {activeGroup.title}
 
@@ -35,7 +36,7 @@
                     class="dropdown-item {group.type} {group.active ? 'active' : 'non-active'}"
                     on:click={()=>groups.setActive(group)}>
         
-                    <i class="{group.active ? 'fa-solid fa-star' : 'fa-regular fa-star'}"></i>
+                    <i class="{group.active ? icons.group.activeStar : icons.group.star}"></i>
         
                     {group.title}
         
@@ -56,7 +57,7 @@
                     class="dropdown-item {group.type} {group.active ? 'active' : 'non-active'}"
                     on:click={()=>groups.setActive(group)}> 
 
-                    <i class="fa-solid fa-circle-check"></i>
+                    <i class={icons.group.checked}></i>
 
                     {group.title}
 
@@ -81,7 +82,7 @@
             aria-controls="add-group"
             class="dropdown-item new"
         >
-            <i class="fa-solid fa-folder-plus"></i>
+            <i class={icons.group.addGroup}></i>
             {labels.group.new}
         </div>
     </li>

@@ -5,8 +5,10 @@
 	import AddGroup from './AddGroup.svelte';
 
     export let groups;
-    export let labels;
     export let activeGroup; 
+    export let todos;
+    export let labels;
+    export let icons;
 </script>
 
 
@@ -17,7 +19,7 @@
     <div class="container row">
 
         <div class="col-9 header-cols">
-            <GroupMenu {groups} {labels} {activeGroup}/>
+            <GroupMenu {groups} {labels} {icons} {activeGroup}/>
         </div>
 
         <div class="col-3">

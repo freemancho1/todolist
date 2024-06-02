@@ -14,3 +14,8 @@ export function showTooltip(node, options) {
         }
     };
 }
+
+export function resizeTextArea(event) {
+    event.currentTarget.style.height = "auto";
+    event.currentTarget.style.height = event.currentTarget.scrollHeight + "px";
+}
