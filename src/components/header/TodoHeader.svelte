@@ -3,6 +3,7 @@
     import GroupMenu from './GroupMenu.svelte';
     import ButtonGroup from './ButtonGroup.svelte';
 	import AddGroup from './AddGroup.svelte';
+    import AddTodo from '../todo/AddTodo.svelte';
 
     export let groups;
     export let activeGroup; 
@@ -31,6 +32,7 @@
 </nav>
 
 <AddGroup {groups} {labels} />
+<AddTodo {todos} {labels} {icons} {activeGroup} />
 
 
 <style lang="scss">
